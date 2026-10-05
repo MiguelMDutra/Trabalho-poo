@@ -1,0 +1,71 @@
+12
+Partido 12
+23
+Partido 23
+12
+Partido 122
+-1
+11111-11
+Rio Grande do Sul
+8526233
+ESTADUAL
+22222-22
+Santa Catarina
+8526233
+REGIONAL
+11111-11
+Brasil
+158700000
+NACIONAL
+33333-33
+Amazonas
+2801182
+ESTADUAL
+-1
+12
+Presidente 12
+12
+00000-00
+120000
+23
+Presidente 23
+23
+00000-00
+230000
+-1
+123
+Governador 12
+12
+22222-22
+Graduacao
+234
+Governador 23
+23
+11111-11
+Mestrado
+234
+Governador 23A
+23
+11111-11
+Especializacao
+-1
+1111
+19
+123
+11111-11
+2222
+10
+23
+00000-00
+3333
+11
+123
+00000-00
+4444
+12
+234
+33333-33
+-1
+12
+23456
+11111-11

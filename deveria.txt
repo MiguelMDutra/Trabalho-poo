@@ -1,0 +1,21 @@
+1: 12 - Partido 12
+1: 23 - Partido 23
+1: ERRO - partido repetido.
+2: 11111-11 - Rio Grande do Sul - 8526233 - ESTADUAL
+2: ERRO - tipo de localidade incorreto.
+2: ERRO - localidade repetida.
+2: 33333-33 - Amazonas - 2801182 - ESTADUAL
+3: ERRO - localidade incorreta.
+3: ERRO - localidade incorreta.
+4: ERRO - localidade incorreta.
+4: 234 - Governador 23 - Partido 23 - Mestrado - Rio Grande do Sul
+4: ERRO - candidato repetido.
+5: ERRO - hora incorreta.
+5: ERRO - candidato incorreto.
+5: ERRO - candidato incorreto.
+5: ERRO - localidade do candidato incorreta.
+6: ERRO - candidato inexistente.
+7: ERRO - partido inexistente.
+8: nenhum candidato eleito.
+9: nenhum partido com votos.
+10: nenhum partido com eleitos.
