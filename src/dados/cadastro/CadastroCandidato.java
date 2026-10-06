@@ -123,7 +123,7 @@ public class CadastroCandidato {
 
             if (listaCandidato.get(i).getNumero() == numero) {
                 System.out.print("6: ");
-                System.out.println(listaCandidato.get(i));
+                System.out.println(listaCandidato.get(i).getDescricao());
                 return;
             }
         }
@@ -147,7 +147,7 @@ public class CadastroCandidato {
         for (int i = 0; i < listaCandidato.size(); i++) {
             if (listaCandidato.get(i).getPartido().getCodigo() == codigo) {
                 System.out.print("7: ");
-                System.out.println(listaCandidato.get(i));
+                System.out.println(listaCandidato.get(i).getDescricao());
                 candidatoExiste = true;
             }
         }

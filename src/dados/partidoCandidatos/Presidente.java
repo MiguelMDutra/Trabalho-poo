@@ -15,7 +15,7 @@ public class Presidente extends Candidato {
     }
 
     @Override
-    public String toString() {
+    public String getDescricao() {
         return getNumero() + " - "
                 + getNome() + " - "
                 + getPartido().getNome() + " - "

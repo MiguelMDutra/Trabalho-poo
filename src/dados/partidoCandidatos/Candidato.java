@@ -50,7 +50,7 @@ public class Candidato {
         votos++;
     }
 
-    public String toString() {
+    public String getDescricao() {
         return "O candidato " + getNome() + " tem o numero: " + getNumero();
     }
 }
