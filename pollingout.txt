@@ -2,30 +2,51 @@
 1: 23 - Partido 23
 1: 34 - Partido 34
 1: 45 - Partido 45
+1: 56 - Partido 56
+1: ERRO - partido repetido.
 2: 11111-11 - Rio Grande do Sul - 8526233 - ESTADUAL
 2: 00000-00 - Brasil - 158700000 - NACIONAL
 2: 33333-33 - Bahia - 11321939 - ESTADUAL
 2: 22222-22 - Sao Paulo - 34105333 - ESTADUAL
+2: 44444-44 - Parana - 11500000 - ESTADUAL
+2: ERRO - localidade repetida.
+2: ERRO - tipo de localidade incorreto.
 3: 12 - Presidente 12 - Partido 12 - 120000.0
 3: 23 - Presidente 23 - Partido 23 - 230000.0
 3: 34 - Presidente 34 - Partido 34 - 340000.0
+3: 56 - Presidente 56 - Partido 56 - 560000.0
+3: ERRO - partido incorreto.
+3: ERRO - candidato repetido.
+3: ERRO - localidade incorreta.
 4: 123 - Governador 12 - Partido 12 - Graduacao - Rio Grande do Sul
 4: 234 - Governador 23 - Partido 23 - Mestrado - Rio Grande do Sul
 4: 345 - Governador 34 - Partido 34 - Doutorado - Bahia
 4: 456 - Governador 45 - Partido 45 - Especializacao - Bahia
-5: 11111 - 15 - Governador 23 - Rio Grande do Sul
-5: 1111 - 9 - Presidente 12 - Brasil
-5: 2222 - 10 - Presidente 23 - Brasil
-5: 3333 - 11 - Presidente 23 - Brasil
-5: 4444 - 12 - Governador 12 - Rio Grande do Sul
-5: 5555 - 13 - Governador 34 - Bahia
-5: 6666 - 14 - Governador 34 - Bahia
-5: 7777 - 15 - Governador 34 - Bahia
-5: 8888 - 16 - Presidente 34 - Brasil
-5: 9999 - 17 - Governador 23 - Rio Grande do Sul
-6: 34 - Presidente 34 - Partido 34 - Brasil - 340000.0
+4: 567 - Governador 56 - Partido 56 - Doutorado - Parana
+4: 678 - Governador 12 PR - Partido 12 - Graduacao - Parana
+4: ERRO - partido incorreto.
+4: ERRO - candidato repetido.
+4: ERRO - localidade incorreta.
+5: 1001 - 9 - Governador 12 - Rio Grande do Sul
+5: 1002 - 10 - Governador 12 - Rio Grande do Sul
+5: 1003 - 11 - Governador 12 - Rio Grande do Sul
+5: 1004 - 12 - Governador 23 - Rio Grande do Sul
+5: 1005 - 13 - Governador 23 - Rio Grande do Sul
+5: 1006 - 14 - Governador 34 - Bahia
+5: 1007 - 15 - Governador 34 - Bahia
+5: 1008 - 16 - Governador 45 - Bahia
+5: 1009 - 9 - Governador 56 - Parana
+5: 1010 - 10 - Governador 12 PR - Parana
+5: 1011 - 11 - Presidente 12 - Brasil
+5: ERRO - localidade do candidato incorreta.
+5: ERRO - candidato incorreto.
+5: 1014 - 8 - Governador 12 - Rio Grande do Sul
+5: ERRO - id repetido.
+5: ERRO - localidade do candidato incorreta.
+6: 123 - Governador 12 - Partido 12 - Rio Grande do Sul - Graduacao
 7: 12 - Presidente 12 - Partido 12 - Brasil - 120000.0
 7: 123 - Governador 12 - Partido 12 - Rio Grande do Sul - Graduacao
-8: 234 - Governador 23 - 2
-9: 34 - Partido 34 - 4
-10: 23 - Partido 23 - 2
+7: 678 - Governador 12 PR - Partido 12 - Parana - Graduacao
+8: 123 - Governador 12 - 4
+9: 12 - Partido 12 - 6
+10: 12 - Partido 12 - 2

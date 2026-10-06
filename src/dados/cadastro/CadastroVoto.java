@@ -36,7 +36,7 @@ public class CadastroVoto {
             boolean valido = true;
             Localidade localidade = null;
 
-            if (hora > 17 || hora < 8) {
+            if (hora > 17 || hora < 8) { // output (mais dados) do professor deixou 17 por isso > e não >=
                 System.out.println("5: ERRO - hora incorreta.");
                 valido = false;
                 continue;
@@ -63,7 +63,7 @@ public class CadastroVoto {
                 }
 
                 if (localidade == null) {
-                    System.out.println("5: ERRO - localidade inexistente.");
+                    System.out.println("5: ERRO - localidade do candidato incorreta.");
                     valido = false;
                 }
 

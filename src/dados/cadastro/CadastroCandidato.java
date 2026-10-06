@@ -160,7 +160,6 @@ public class CadastroCandidato {
     }
 
     public void consultaEleito(String cep, ArrayList<Localidade> listaLocalidade) {
-
         boolean localidadeExiste = false;
 
         for (int i = 0; i < listaLocalidade.size(); i++) {
@@ -188,6 +187,7 @@ public class CadastroCandidato {
         }
 
         Candidato maior = candidatosLocalidade.get(0);
+
         for (int i = 1; i < candidatosLocalidade.size(); i++) {
             if (candidatosLocalidade.get(i).getVotos() > maior.getVotos()) {
                 maior = candidatosLocalidade.get(i);

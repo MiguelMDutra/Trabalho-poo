@@ -68,7 +68,7 @@ public class CadastroPartidos {
     public void consultaMaiorEleito(ArrayList<Candidato> listaCandidatos) {
 
         if (listaPartido.size() == 0) {
-            System.out.println("10: ERRO - nenhum partido cadastrado.");
+            System.out.print("10: ERRO - nenhum partido cadastrado.");
             return;
         }
 
@@ -83,11 +83,11 @@ public class CadastroPartidos {
         }
 
         if (maior.getEleitos() == 0) {
-            System.out.println("10: nenhum partido com eleitos.");
+            System.out.print("10: nenhum partido com eleitos.");
             return;
         }
 
-        System.out.println("10: " + maior.getCodigo() + " - "
+        System.out.print("10: " + maior.getCodigo() + " - "
                 + maior.getNome() + " - " + maior.getEleitos());
     }
 
