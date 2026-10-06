@@ -18,7 +18,7 @@ public class Governador extends Candidato {
                 + getNome() + " - "
                 + getPartido().getNome() + " - "
                 + getLocalidade().getNome() + " - "
-                + getEscolaridade();
+                + getEscolaridade() + " - " + getVotos() + " - " + getUltimoVoto();
     }
 
     @Override

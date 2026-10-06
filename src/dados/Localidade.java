@@ -28,16 +28,4 @@ public class Localidade {
     public TipoLocalidade getTipoLocalidade() {
         return tipo;
     }
-
-    public void setQtdEleitores(long qtdEleitores) {
-        this.qtdEleitores = qtdEleitores;
-    }
-
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 }

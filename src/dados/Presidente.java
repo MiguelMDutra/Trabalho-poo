@@ -18,7 +18,7 @@ public class Presidente extends Candidato {
                 + getNome() + " - "
                 + getPartido().getNome() + " - "
                 + getLocalidade().getNome() + " - "
-                + getPatrimonio();
+                + getPatrimonio() + " - " + getVotos() + " - " + getUltimoVoto();
     }
 
     @Override

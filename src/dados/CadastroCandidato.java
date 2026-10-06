@@ -21,6 +21,12 @@ public class CadastroCandidato {
 
         Partido partido = helperListaPartido(partidoCodigo, listaPartido);
 
+        for (int i = 0; i < listaCandidato.size(); i++) {
+            if (listaCandidato.get(i).getNumero() == numero) {
+                return "3: ERRO - candidato repetido.";
+            }
+        }
+
         if (partido == null) {
             return "3: ERRO - partido incorreto.";
         }
@@ -29,12 +35,6 @@ public class CadastroCandidato {
 
         if (localidade == null) {
             return "3: ERRO - localidade incorreta.";
-        }
-
-        for (int i = 0; i < listaCandidato.size(); i++) {
-            if (listaCandidato.get(i).getNumero() == numero) {
-                return "3: ERRO - candidato repetido.";
-            }
         }
 
         Candidato presidente = new Presidente(

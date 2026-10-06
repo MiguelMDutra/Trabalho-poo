@@ -26,28 +26,28 @@ public class AppACMEPolling {
     private CadastroVoto votoCadastro = new CadastroVoto();
 
     public void executar() {
-        metodo1();
+        cadastrarPartido();
 
-        metodo2();
+        cadastrarLocalidade();
 
-        metodo3();
+        cadastrarCandidatoAPresidente();
 
-        metodo4();
+        cadastrarCandidatoAGovernador();
 
-        metodo5();
+        cadastrarVoto();
 
-        metodo6();
+        consultarCandidato();
 
-        metodo7();
+        mostrarCandidatoDoPartido();
 
-        metodo8();
+        mostrarEleitoDeLocalidade();
 
-        metodo9();
+        mostrarPartidoComMaisVotos();
 
-        metodo10();
+        mostrarPartidoComMaisEleitos();
     }
 
-    public void metodo1() {
+    public void cadastrarPartido() {
         while (true) {
             int codigo = Integer.parseInt(entrada.nextLine());
 
@@ -61,7 +61,7 @@ public class AppACMEPolling {
         }
     }
 
-    public void metodo2() {
+    public void cadastrarLocalidade() {
 
         while (true) {
 
@@ -96,7 +96,7 @@ public class AppACMEPolling {
         }
     }
 
-    public void metodo3() {
+    public void cadastrarCandidatoAPresidente() {
         while (true) {
             int numero = Integer.parseInt(entrada.nextLine());
 
@@ -121,7 +121,7 @@ public class AppACMEPolling {
         }
     }
 
-    public void metodo4() {
+    public void cadastrarCandidatoAGovernador() {
         while (true) {
             int numero = Integer.parseInt(entrada.nextLine());
 
@@ -148,7 +148,7 @@ public class AppACMEPolling {
         }
     }
 
-    public void metodo5() {
+    public void cadastrarVoto() {
         while (true) {
             int id = Integer.parseInt(entrada.nextLine());
 
@@ -172,20 +172,20 @@ public class AppACMEPolling {
         }
     }
 
-    public void metodo6() {
+    public void consultarCandidato() {
         int numero = entrada.nextInt();
         entrada.nextLine();
         System.out.println(candidatoCadastro.consultaCandidato(numero));
     }
 
-    public void metodo7() {
+    public void mostrarCandidatoDoPartido() {
         int codigo = entrada.nextInt();
         entrada.nextLine();
 
         System.out.println(candidatoCadastro.consultaPartido(codigo, partidoCadastro.getListaPartido()));
     }
 
-    public void metodo8() {
+    public void mostrarEleitoDeLocalidade() {
         String cep = entrada.nextLine();
 
         System.out.println(candidatoCadastro.consultaEleito(
@@ -193,11 +193,11 @@ public class AppACMEPolling {
                 localidadeCadastro.getListaLocalidade()));
     }
 
-    public void metodo9() {
+    public void mostrarPartidoComMaisVotos() {
         System.out.println(partidoCadastro.consultaMaiorPartido());
     }
 
-    public void metodo10() {
+    public void mostrarPartidoComMaisEleitos() {
         System.out.print(partidoCadastro.consultaMaiorEleito(
                 candidatoCadastro.getListaCandidato()));
     }
