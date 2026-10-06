@@ -1,8 +1,8 @@
-import aplicacao.App;
+import aplicacao.AppACMEPolling;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        App app = new App();
+        AppACMEPolling app = new AppACMEPolling();
         app.executar();
     }
 }

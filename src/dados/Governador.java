@@ -4,8 +4,8 @@ public class Governador extends Candidato {
     private String escolaridade;
 
     public Governador(int numero, String nome, Partido partido, Localidade localidade, String escolaridade) {
-        this.escolaridade = escolaridade;
         super(numero, nome, partido, localidade);
+        this.escolaridade = escolaridade;
     }
 
     public String getEscolaridade() {
@@ -18,6 +18,14 @@ public class Governador extends Candidato {
                 + getNome() + " - "
                 + getPartido().getNome() + " - "
                 + getLocalidade().getNome() + " - "
+                + getEscolaridade();
+    }
+
+    @Override
+    public String getDescricaoParcial() {
+        return getNumero() + " - "
+                + getNome() + " - "
+                + getPartido().getNome() + " - "
                 + getEscolaridade();
     }
 }

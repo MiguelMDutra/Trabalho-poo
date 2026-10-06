@@ -1,7 +1,6 @@
 package dados;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class CadastroLocalidade {
     private ArrayList<Localidade> listaLocalidade;
@@ -14,59 +13,38 @@ public class CadastroLocalidade {
         return listaLocalidade;
     }
 
-    public void cadastrarLocalidade(Scanner entrada) {
-        entrada.nextLine();
+    public String cadastrarLocalidade(String cep, String nome, long qtdEleitores, TipoLocalidade tipo) {
 
-        while (true) {
+        String resultado = "";
 
-            String cep = entrada.nextLine();
+        if (tipo == null) {
+            resultado = "2: ERRO - tipo de localidade incorreto.";
+            return resultado;
+        }
 
-            if (cep.equals("-1")) {
+        boolean repetido = false;
+
+        for (int i = 0; i < listaLocalidade.size(); i++) {
+            if (cep.equals(listaLocalidade.get(i).getCep())) {
+                resultado = "2: ERRO - localidade repetida.";
+                repetido = true;
                 break;
             }
-
-            String nome = entrada.nextLine();
-            long qtdEleitores = Long.parseLong(entrada.nextLine());
-            String tipo = entrada.nextLine();
-
-            TipoLocalidade tipoLocalidade = null;
-
-            TipoLocalidade[] tipos = TipoLocalidade.values();
-
-            for (int i = 0; i < tipos.length; i++) {
-                if (tipos[i].name().equals(tipo)) {
-                    tipoLocalidade = tipos[i];
-                    break;
-                }
-            }
-
-            if (tipoLocalidade == null) {
-                System.out.println("2: ERRO - tipo de localidade incorreto.");
-                continue;
-            }
-
-            boolean repetido = false;
-
-            for (int i = 0; i < listaLocalidade.size(); i++) {
-
-                if (cep.equals(listaLocalidade.get(i).getCep())) {
-                    System.out.println("2: ERRO - localidade repetida.");
-                    repetido = true;
-                    break;
-                }
-            }
-
-            if (!repetido) {
-                Localidade novaLocalidade = new Localidade(
-                        qtdEleitores,
-                        cep,
-                        nome,
-                        tipoLocalidade);
-                listaLocalidade.add(novaLocalidade);
-                System.out.println(
-                        "2: " + cep + " - " + nome + " - " +
-                                qtdEleitores + " - " + tipoLocalidade);
-            }
         }
+
+        if (!repetido) {
+            Localidade novaLocalidade = new Localidade(
+                    qtdEleitores,
+                    cep,
+                    nome,
+                    tipo);
+
+            listaLocalidade.add(novaLocalidade);
+
+            resultado = "2: " + cep + " - " + nome + " - "
+                    + qtdEleitores + " - " + tipo;
+        }
+
+        return resultado;
     }
 }

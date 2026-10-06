@@ -49,6 +49,11 @@ public class Candidato {
     }
 
     public String getDescricao() {
-        return "O candidato " + getNome() + " tem o numero: " + getNumero();
+        return getNumero() + " - " + getNome() + " - " + getPartido().getNome() + " - " + getLocalidade().getNome()
+                + " - " + getVotos() + " - " + getUltimoVoto();
+    }
+
+    public String getDescricaoParcial() {
+        return getNumero() + " - " + getNome() + " - " + getPartido().getNome();
     }
 }

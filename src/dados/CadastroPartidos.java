@@ -1,7 +1,6 @@
 package dados;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class CadastroPartidos {
     private ArrayList<Partido> listaPartido;
@@ -14,38 +13,22 @@ public class CadastroPartidos {
         return listaPartido;
     }
 
-    public void cadastrarPartido(Scanner entrada) {
-        boolean liberado = false;
-
-        while (!liberado) {
-            int codigo = entrada.nextInt();
-            if (codigo == -1) {
-                break;
-            }
-            entrada.nextLine();
-            String partido = entrada.nextLine();
-
-            boolean repetido = false;
-
-            for (int i = 0; i < listaPartido.size(); i++) {
-                if (codigo == listaPartido.get(i).getCodigo()) {
-                    System.out.println("1: ERRO - partido repetido.");
-                    repetido = true;
-                }
-            }
-
-            if (!repetido) {
-                Partido novPartido = new Partido(codigo, partido);
-                listaPartido.add(novPartido);
-                System.out.println("1: " + codigo + " - " + partido);
+    public String cadastrarPartido(int codigo, String partido) {
+        for (int i = 0; i < listaPartido.size(); i++) {
+            if (codigo == listaPartido.get(i).getCodigo()) {
+                return "1: ERRO - partido repetido.";
             }
         }
+
+        Partido novPartido = new Partido(codigo, partido);
+        listaPartido.add(novPartido);
+        return "1: " + codigo + " - " + partido;
     }
 
-    public void consultaMaiorPartido() {
+    public String consultaMaiorPartido() {
         if (listaPartido.size() == 0) {
-            System.out.println("9: ERRO - nenhum partido cadastrado.");
-            return;
+            return "9: ERRO - nenhum partido cadastrado.";
+
         }
         Partido maior = listaPartido.get(0);
         for (int i = 0; i < listaPartido.size(); i++) {
@@ -54,19 +37,17 @@ public class CadastroPartidos {
             }
         }
         if (maior.getVotosPartido() == 0) {
-            System.out.println("9: nenhum partido com votos.");
-            return;
+            return "9: nenhum partido com votos.";
         }
 
-        System.out.print("9: ");
-        System.out.println(maior.getCodigo() + " - " + maior.getNome() + " - " + maior.getVotosPartido());
+        return "9: " + maior.getCodigo() + " - " + maior.getNome() + " - " + maior.getVotosPartido();
     }
 
-    public void consultaMaiorEleito(ArrayList<Candidato> listaCandidatos) {
+    public String consultaMaiorEleito(ArrayList<Candidato> listaCandidatos) {
 
         if (listaPartido.size() == 0) {
-            System.out.print("10: ERRO - nenhum partido cadastrado.");
-            return;
+            return "10: ERRO - nenhum partido cadastrado.";
+
         }
 
         helperEleitos(listaCandidatos);
@@ -80,12 +61,10 @@ public class CadastroPartidos {
         }
 
         if (maior.getEleitos() == 0) {
-            System.out.print("10: nenhum partido com eleitos.");
-            return;
+            return "10: nenhum partido com eleitos.";
         }
 
-        System.out.print("10: " + maior.getCodigo() + " - "
-                + maior.getNome() + " - " + maior.getEleitos());
+        return "10: " + maior.getCodigo() + " - " + maior.getNome() + " - " + maior.getEleitos();
     }
 
     public void helperEleitos(ArrayList<Candidato> listaCandidatos) {

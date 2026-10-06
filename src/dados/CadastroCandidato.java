@@ -1,7 +1,6 @@
 package dados;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class CadastroCandidato {
     private ArrayList<Candidato> listaCandidato;
@@ -14,117 +13,109 @@ public class CadastroCandidato {
         return listaCandidato;
     }
 
-    public void cadastrarCandidato(
-            Scanner entrada,
-            ArrayList<Partido> listaPartido,
-            ArrayList<Localidade> listaLocalidade,
-            int tipo) {
+    public String cadastrarCandidato(
+            int numero, String nome,
+            int partidoCodigo, String cep,
+            double patrimonio, ArrayList<Partido> listaPartido,
+            ArrayList<Localidade> listaLocalidade) {
 
-        while (true) {
-            int numero = entrada.nextInt();
+        Partido partido = helperListaPartido(partidoCodigo, listaPartido);
 
-            if (numero == -1) {
-                break;
-            }
+        if (partido == null) {
+            return "3: ERRO - partido incorreto.";
+        }
 
-            entrada.nextLine();
+        Localidade localidade = helperLocalidade(cep, listaLocalidade);
 
-            String nome = entrada.nextLine();
-            int partidoCodigo = entrada.nextInt();
-            entrada.nextLine();
+        if (localidade == null) {
+            return "3: ERRO - localidade incorreta.";
+        }
 
-            Partido partido = helperListaPartido(partidoCodigo, listaPartido);
-            String cep = entrada.nextLine();
-            Localidade localidade = helperLocalidade(cep, listaLocalidade);
-
-            boolean repetido = false;
-
-            for (int i = 0; i < listaCandidato.size(); i++) {
-                if (listaCandidato.get(i).getNumero() == numero) {
-                    repetido = true;
-                }
-            }
-
-            if (tipo == 1) {
-
-                double patrimonio = entrada.nextDouble();
-                entrada.nextLine();
-
-                if (repetido) {
-                    System.out.println("3: ERRO - candidato repetido.");
-                    continue;
-                }
-
-                if (partido == null) {
-                    System.out.println("3: ERRO - partido incorreto.");
-                    continue;
-                }
-
-                if (localidade == null) {
-                    System.out.println("3: ERRO - localidade incorreta.");
-                    continue;
-                }
-
-                Candidato presidente = new Presidente(
-                        numero,
-                        nome,
-                        partido,
-                        localidade,
-                        patrimonio);
-
-                listaCandidato.add(presidente);
-                System.out.println(
-                        "3: " + numero + " - " + nome + " - " +
-                                partido.getNome() + " - " + patrimonio);
-
-            } else if (tipo == 2) {
-                String escolaridade = entrada.nextLine();
-
-                if (repetido) {
-                    System.out.println("4: ERRO - candidato repetido.");
-                    continue;
-                }
-
-                if (partido == null) {
-                    System.out.println("4: ERRO - partido incorreto.");
-                    continue;
-                }
-
-                if (localidade == null) {
-                    System.out.println("4: ERRO - localidade incorreta.");
-                    continue;
-                }
-
-                Candidato governador = new Governador(
-                        numero,
-                        nome,
-                        partido,
-                        localidade,
-                        escolaridade);
-
-                listaCandidato.add(governador);
-                System.out.println(
-                        "4: " + numero + " - " + nome + " - " +
-                                partido.getNome() + " - " +
-                                escolaridade + " - " + governador.getLocalidade().getNome());
+        for (int i = 0; i < listaCandidato.size(); i++) {
+            if (listaCandidato.get(i).getNumero() == numero) {
+                return "3: ERRO - candidato repetido.";
             }
         }
+
+        Candidato presidente = new Presidente(
+                numero,
+                nome,
+                partido,
+                localidade,
+                patrimonio);
+
+        listaCandidato.add(presidente);
+
+        return "3: " + numero + " - " + nome + " - "
+                + partido.getNome() + " - " + patrimonio;
     }
 
-    public void consultaCandidato(int numero) {
+    public String cadastrarGovernador(
+            int numero,
+            String nome,
+            int partidoCodigo,
+            String cep,
+            String escolaridade, ArrayList<Partido> listaPartido,
+            ArrayList<Localidade> listaLocalidade) {
+
+        Partido partido = helperListaPartido(partidoCodigo, listaPartido);
+
+        if (partido == null) {
+            return "4: ERRO - partido incorreto.";
+        }
+
+        Localidade localidade = helperLocalidade(cep, listaLocalidade);
+
+        if (localidade == null) {
+            return "4: ERRO - localidade incorreta.";
+        }
+
+        for (int i = 0; i < listaCandidato.size(); i++) {
+            if (listaCandidato.get(i).getNumero() == numero) {
+                return "4: ERRO - candidato repetido.";
+            }
+        }
+
+        Candidato governador = new Governador(
+                numero,
+                nome,
+                partido,
+                localidade,
+                escolaridade);
+
+        listaCandidato.add(governador);
+
+        return "4: " + numero + " - " + nome + " - "
+                + partido.getNome() + " - "
+                + escolaridade + " - "
+                + governador.getLocalidade().getNome();
+    }
+
+    public String consultaCandidato(int numero) {
 
         for (int i = 0; i < listaCandidato.size(); i++) {
 
+            String resultado = "";
+
             if (listaCandidato.get(i).getNumero() == numero) {
-                System.out.print("6: ");
-                System.out.println(listaCandidato.get(i).getDescricao());
-                return;
+                resultado = "6: "
+                        + listaCandidato.get(i).getNumero() + " - " + listaCandidato.get(i).getNome() + " - "
+                        + listaCandidato.get(i).getPartido().getNome() + " - "
+                        + listaCandidato.get(i).getLocalidade().getNome();
+                if (listaCandidato.get(i) instanceof Presidente) {
+                    Presidente presidente = (Presidente) listaCandidato.get(i);
+                    resultado += " - " + presidente.getPatrimonio();
+                } else if (listaCandidato.get(i) instanceof Governador) {
+                    Governador governador = (Governador) listaCandidato.get(i);
+                    resultado += " - " + governador.getEscolaridade();
+                }
+                return resultado;
             }
         }
-        System.out.println("6: ERRO - candidato inexistente.");
+        return "6: ERRO - candidato inexistente.";
     }
 
-    public void consultaPartido(int codigo, ArrayList<Partido> listaPartido) {
+    public String consultaPartido(int codigo, ArrayList<Partido> listaPartido) {
         boolean partidoExiste = false;
         for (int i = 0; i < listaPartido.size(); i++) {
             if (listaPartido.get(i).getCodigo() == codigo) {
@@ -133,30 +124,52 @@ public class CadastroCandidato {
         }
 
         if (!partidoExiste) {
-            System.out.println("7: ERRO - partido inexistente.");
-            return;
+            return "7: ERRO - partido inexistente.";
         }
 
-        boolean candidatoExiste = false;
+        String resultado = "";
+
         for (int i = 0; i < listaCandidato.size(); i++) {
-            if (listaCandidato.get(i).getPartido().getCodigo() == codigo) {
-                System.out.print("7: ");
-                System.out.println(listaCandidato.get(i).getDescricao());
-                candidatoExiste = true;
+            Candidato candidato = listaCandidato.get(i);
+
+            if (candidato.getPartido().getCodigo() == codigo) {
+                resultado += "7: "
+                        + candidato.getNumero()
+                        + " - "
+                        + candidato.getNome()
+                        + " - "
+                        + candidato.getPartido().getNome()
+                        + " - "
+                        + candidato.getLocalidade().getNome();
+
+                if (candidato instanceof Presidente) {
+                    Presidente presidente = (Presidente) candidato;
+                    resultado += " - " + presidente.getPatrimonio();
+                } else if (candidato instanceof Governador) {
+                    Governador governador = (Governador) candidato;
+                    resultado += " - " + governador.getEscolaridade();
+                }
+                resultado += "\n";
             }
         }
 
-        if (!candidatoExiste) {
-            System.out.println("7: nenhum candidato cadastrado.");
+        if (resultado.equals("")) {
+            return "7: nenhum candidato cadastrado.";
         }
 
-        return;
+        resultado = resultado.substring(0, resultado.length() - 1); // pesquisei pra conseguir n pular a ultima linha
+
+        return resultado;
     }
 
-    public void consultaEleito(String cep, ArrayList<Localidade> listaLocalidade) {
+    public String consultaEleito(
+            String cep,
+            ArrayList<Localidade> listaLocalidade) {
+
         boolean localidadeExiste = false;
 
         for (int i = 0; i < listaLocalidade.size(); i++) {
+
             if (listaLocalidade.get(i).getCep().equals(cep)) {
                 localidadeExiste = true;
                 break;
@@ -164,41 +177,46 @@ public class CadastroCandidato {
         }
 
         if (!localidadeExiste) {
-            System.out.println("8: ERRO - localidade inexistente.");
-            return;
+            return "8: ERRO - localidade inexistente.";
         }
 
         ArrayList<Candidato> candidatosLocalidade = new ArrayList<>();
+
         for (int i = 0; i < listaCandidato.size(); i++) {
+
             if (listaCandidato.get(i).getLocalidade().getCep().equals(cep)) {
                 candidatosLocalidade.add(listaCandidato.get(i));
             }
         }
 
         if (candidatosLocalidade.size() == 0) {
-            System.out.println("8: nenhum candidato cadastrado.");
-            return;
+            return "8: nenhum candidato cadastrado.";
+
         }
 
         Candidato maior = candidatosLocalidade.get(0);
 
         for (int i = 1; i < candidatosLocalidade.size(); i++) {
+
             if (candidatosLocalidade.get(i).getVotos() > maior.getVotos()) {
+
                 maior = candidatosLocalidade.get(i);
+
             } else if (candidatosLocalidade.get(i).getVotos() == maior.getVotos()) {
+
                 if (candidatosLocalidade.get(i).getUltimoVoto() < maior.getUltimoVoto()) {
+
                     maior = candidatosLocalidade.get(i);
                 }
             }
         }
 
         if (maior.getVotos() == 0) {
-            System.out.println("8: nenhum candidato eleito.");
-            return;
+            return "8: nenhum candidato eleito.";
+
         }
 
-        System.out.println("8: " + maior.getNumero() + " - "
-                + maior.getNome() + " - " + maior.getVotos());
+        return "8: " + maior.getNumero() + " - " + maior.getNome() + " - " + maior.getVotos();
     }
 
     public Partido helperListaPartido(int partidoCodigo, ArrayList<Partido> listaPartido) {
