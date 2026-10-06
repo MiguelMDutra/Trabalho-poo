@@ -1,4 +1,4 @@
-package dados.localidade;
+package dados;
 
 public enum TipoLocalidade {
     NACIONAL("NACIONAL"), ESTADUAL("ESTADUAL"), MUNICIPAL("MUNICIPAL");

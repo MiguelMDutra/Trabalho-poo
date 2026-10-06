@@ -8,10 +8,10 @@ import java.nio.charset.Charset;
 import java.util.Locale;
 import java.util.Scanner;
 
-import dados.cadastro.CadastroCandidato;
-import dados.cadastro.CadastroLocalidade;
-import dados.cadastro.CadastroPartidos;
-import dados.cadastro.CadastroVoto;
+import dados.CadastroLocalidade;
+import dados.CadastroPartidos;
+import dados.CadastroVoto;
+import dados.CadastroCandidato;
 
 public class App {
 

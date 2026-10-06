@@ -1,4 +1,4 @@
-package dados.localidade;
+package dados;
 
 public class Localidade {
     private long qtdEleitores;

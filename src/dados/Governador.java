@@ -1,6 +1,4 @@
-package dados.partidoCandidatos;
-
-import dados.localidade.Localidade;
+package dados;
 
 public class Governador extends Candidato {
     private String escolaridade;

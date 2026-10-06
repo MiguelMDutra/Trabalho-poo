@@ -1,13 +1,7 @@
-package dados.cadastro;
+package dados;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import dados.localidade.Localidade;
-import dados.partidoCandidatos.Candidato;
-import dados.partidoCandidatos.Governador;
-import dados.partidoCandidatos.Partido;
-import dados.partidoCandidatos.Presidente;
 
 public class CadastroCandidato {
     private ArrayList<Candidato> listaCandidato;

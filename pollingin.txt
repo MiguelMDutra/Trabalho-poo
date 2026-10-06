@@ -2,43 +2,25 @@
 Partido 12
 23
 Partido 23
-34
-Partido 34
-45
-Partido 45
-56
-Partido 56
 12
-Partido 12 Repetido
+Partido 122
 -1
 11111-11
 Rio Grande do Sul
 8526233
 ESTADUAL
-00000-00
+22222-22
+Santa Catarina
+8526233
+REGIONAL
+11111-11
 Brasil
 158700000
 NACIONAL
 33333-33
-Bahia
-11321939
+Amazonas
+2801182
 ESTADUAL
-22222-22
-Sao Paulo
-34105333
-ESTADUAL
-44444-44
-Parana
-11500000
-ESTADUAL
-11111-11
-Rio Grande do Sul Repetido
-8526233
-ESTADUAL
-55555-55
-Minas Gerais
-21000000
-INVALIDO
 -1
 12
 Presidente 12
@@ -50,143 +32,40 @@ Presidente 23
 23
 00000-00
 230000
-34
-Presidente 34
-34
-00000-00
-340000
-56
-Presidente 56
-56
-00000-00
-560000
-78
-Presidente Invalido
-99
-00000-00
-780000
-12
-Presidente Repetido
-12
-00000-00
-999999
-90
-Presidente Local Invalido
-34
-99999-99
-900000
 -1
 123
 Governador 12
 12
-11111-11
+22222-22
 Graduacao
 234
 Governador 23
 23
 11111-11
 Mestrado
-345
-Governador 34
-34
-33333-33
-Doutorado
-456
-Governador 45
-45
-33333-33
+234
+Governador 23A
+23
+11111-11
 Especializacao
-567
-Governador 56
-56
-44444-44
-Doutorado
-678
-Governador 12 PR
-12
-44444-44
-Graduacao
-789
-Governador Invalido
-99
-44444-44
-Mestrado
-123
-Governador Repetido
-12
-11111-11
-Doutorado
-890
-Governador Local Invalido
-34
-99999-99
-Mestrado
 -1
-1001
-9
+1111
+19
 123
 11111-11
-1002
+2222
 10
-123
-11111-11
-1003
-11
-123
-11111-11
-1004
-12
-234
-11111-11
-1005
-13
-234
-11111-11
-1006
-14
-345
-33333-33
-1007
-15
-345
-33333-33
-1008
-16
-456
-33333-33
-1009
-9
-567
-44444-44
-1010
-10
-678
-44444-44
-1011
-11
-12
+23
 00000-00
-1012
+3333
+11
+123
+00000-00
+4444
 12
 234
 33333-33
-1013
-13
-999
-11111-11
-1014
-8
-123
-11111-11
-1001
-14
-123
-11111-11
-1015
-15
-123
-99999-99
 -1
-123
 12
+23456
 11111-11

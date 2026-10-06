@@ -1,10 +1,7 @@
-package dados.cadastro;
+package dados;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import dados.localidade.Localidade;
-import dados.localidade.TipoLocalidade;
 
 public class CadastroLocalidade {
     private ArrayList<Localidade> listaLocalidade;
